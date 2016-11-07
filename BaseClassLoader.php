@@ -17,7 +17,6 @@
 
 class BaseClassLoader extends \Threaded implements ClassLoader{
 
-	/** @var \ClassLoader */
 	private $parent;
 	/** @var string[] */
 	private $lookup;
@@ -25,10 +24,7 @@ class BaseClassLoader extends \Threaded implements ClassLoader{
 	private $classes;
 
 
-	/**
-	 * @param ClassLoader $parent
-	 */
-	public function __construct(ClassLoader $parent = null){
+	public function __construct($parent = null){
 		$this->parent = $parent;
 		$this->lookup = new \Threaded;
 		$this->classes = new \Threaded;
